@@ -4,6 +4,7 @@ import Input from "../Input";
 import Display from "../Display";
 
 function App() {
+  //
   return (
     <div className="App">
       <WelcomePage />
