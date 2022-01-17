@@ -6,10 +6,14 @@ import ScoreDD from "../ScoreDD";
 function Input() {
   return (
     <div>
-      <h1>Welcome, User...</h1>
-      <WeekDD />
-      <DayDD />
-      <ScoreDD />
+      <div className="input-main-div">
+        <div className="welcome-text">
+          <h1>Welcome, User...</h1>
+        </div>
+        <WeekDD />
+        <DayDD />
+        <ScoreDD />
+      </div>
     </div>
   );
 }
