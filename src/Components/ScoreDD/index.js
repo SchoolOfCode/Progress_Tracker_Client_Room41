@@ -12,7 +12,7 @@ function ScoreDD() {
   return (
     <div>
       <FormControl variant="standard" sx={{ m: 1, minWidth: 80 }}>
-        <InputLabel>Day</InputLabel>
+        <InputLabel>Score</InputLabel>
         <Select label="score" onChange={handleChange}>
           <MenuItem value={1}>1</MenuItem>
           <MenuItem value={2}>2</MenuItem>
