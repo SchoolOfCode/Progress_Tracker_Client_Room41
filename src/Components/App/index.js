@@ -6,13 +6,16 @@ import { useState } from "react";
 
 function App() {
   const [welcome, setWelcome] = useState(false);
-  const [name, setName] = useState("Username");
+  const [name, setName] = useState("");
+  const [password, setPassword] = useState("");
+
+  console.log(name, password);
 
   if (welcome)
     return (
       <div className="main-parent-div">
-        <Input />
-        <Display />
+        <Input name={name} />
+        <Display name={name} />
       </div>
     );
 
@@ -20,10 +23,12 @@ function App() {
 
   return (
     <div className="main-app">
-      <WelcomePage setWelcome={setWelcome} setName={setName} />
-      <p>
-        Input and display will be hidden until welcome page has been passed.
-      </p>
+      <WelcomePage
+        setWelcome={setWelcome}
+        setName={setName}
+        setPassword={setPassword}
+      />
+      <p>Input and display hidden until welcome page passed.</p>
     </div>
   );
 }
