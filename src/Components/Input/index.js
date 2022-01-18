@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import WeekDD from "../WeekDD";
 import DayDD from "../DayDD";
 import ScoreDD from "../ScoreDD";
-import { Button } from "@mui/material";
+import { Button, FormControl } from "@mui/material";
 import "./Input.css";
 const url = "http://localhost:3005/";
 let tableData = {};
@@ -38,6 +38,7 @@ function Input() {
       });
       const data = await response.json();
       console.log("data: ", data);
+      // function that waits a second and then sends a fetch
     } catch (error) {
       console.log(error.message);
     }
