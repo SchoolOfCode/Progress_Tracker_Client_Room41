@@ -14,6 +14,7 @@ function ScoreDD({ setScore }) {
       <FormControl variant="standard" sx={{ m: 1, minWidth: 80 }}>
         <InputLabel>Score</InputLabel>
         <Select
+          defaultValue={""}
           label="score"
           onChange={(event) => {
             handleChange(event);

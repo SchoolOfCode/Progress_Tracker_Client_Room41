@@ -1,7 +1,8 @@
 .main-parent-div {
   text-align: center;
   width: 30vw;
-  margin: 50px auto 0 40px;
+  margin: 50px auto;
+  
 }
 
 .main-app {
@@ -18,4 +19,8 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+}
+
+body{
+  background-color: #fafaff;
 }

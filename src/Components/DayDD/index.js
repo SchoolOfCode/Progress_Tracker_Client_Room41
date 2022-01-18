@@ -15,6 +15,7 @@ function DayDD({ setDay }) {
       <FormControl variant="standard" sx={{ m: 1, minWidth: 80 }}>
         <InputLabel>Day</InputLabel>
         <Select
+          defaultValue={""}
           label="day"
           onChange={(event) => {
             handleChange(event);
