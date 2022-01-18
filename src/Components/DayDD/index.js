@@ -1,8 +1,6 @@
 import React from "react";
-import Select from "@mui/material/Select";
-import FormControl from "@mui/material/FormControl";
-import MenuItem from "@mui/material/MenuItem";
-import InputLabel from "@mui/material/InputLabel";
+import { Select, FormControl, MenuItem, InputLabel } from "@mui/material/";
+import "./DayDD.css";
 
 function DayDD({ setDay }) {
   //! Set the day value function

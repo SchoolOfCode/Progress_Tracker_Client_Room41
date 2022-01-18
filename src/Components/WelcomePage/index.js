@@ -1,6 +1,7 @@
 import React from "react";
 import { BsArrowRightSquare } from "react-icons/bs";
 import { Box, TextField } from "@mui/material";
+import "./WelcomePage.css";
 
 function WelcomePage({ setWelcome }) {
   function handleClick(e) {

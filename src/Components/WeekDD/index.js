@@ -1,8 +1,6 @@
-import React, { useState } from "react";
-import Select from "@mui/material/Select";
-import FormControl from "@mui/material/FormControl";
-import MenuItem from "@mui/material/MenuItem";
-import InputLabel from "@mui/material/InputLabel";
+import React from "react";
+import { Select, FormControl, MenuItem, InputLabel } from "@mui/material/";
+import "./WeekDD.css";
 
 function WeekDD({ setWeek }) {
   function handleChange(event) {

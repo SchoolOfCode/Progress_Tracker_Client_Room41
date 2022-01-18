@@ -1,8 +1,6 @@
 import React from "react";
-import Select from "@mui/material/Select";
-import FormControl from "@mui/material/FormControl";
-import MenuItem from "@mui/material/MenuItem";
-import InputLabel from "@mui/material/InputLabel";
+import { Select, FormControl, MenuItem, InputLabel } from "@mui/material";
+import "./ScoreDD.css";
 
 function ScoreDD({ setScore }) {
   function handleChange(event) {
@@ -20,6 +18,7 @@ function ScoreDD({ setScore }) {
           onChange={(event) => {
             handleChange(event);
           }}
+          required={true}
         >
           <MenuItem value={1}>1</MenuItem>
           <MenuItem value={2}>2</MenuItem>
