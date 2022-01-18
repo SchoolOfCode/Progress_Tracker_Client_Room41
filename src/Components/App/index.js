@@ -9,18 +9,18 @@ function App() {
 
   if (welcome)
     return (
-      <div className="parent-div">
+      <div className="main-parent-div">
         <Input />
         <Display />
       </div>
     );
 
   return (
-    <div className="App">
+    <div className="main-app">
       <WelcomePage setWelcome={setWelcome} />
-      <h1>
+      <p>
         Input and display will be hidden until welcome page has been passed.
-      </h1>
+      </p>
     </div>
   );
 }

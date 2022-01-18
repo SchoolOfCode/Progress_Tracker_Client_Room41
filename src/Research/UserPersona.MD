@@ -4,8 +4,6 @@ https://www.hubspot.com/make-my-persona?persona=-MtcX318nOdLIwbkxXJE
 
 Research is based on bootcampers direct questions and answers which gave us a clear idea of who they are, so we knew what they want from their tracker.
 
-USER RESEARCH:
-
 8 people including us (team) bootcampers took into consideration all of our wishes to make the product user-friendly and useful.
 List of Bootcampers who had been interviewed for this Product (outside of our room):
 

@@ -1,9 +1,26 @@
 import React from "react";
+import Select from "@mui/material/Select";
+import FormControl from "@mui/material/FormControl";
+import MenuItem from "@mui/material/MenuItem";
+import InputLabel from "@mui/material/InputLabel";
 
 function DayDD() {
+  function handleChange() {
+    console.log("HANDLECHANGE DAY DD FUNCTION");
+  }
+
   return (
     <div>
-      <h1>Day drop down</h1>
+      <FormControl variant="standard" sx={{ m: 1, minWidth: 80 }}>
+        <InputLabel>Day</InputLabel>
+        <Select label="day" onChange={handleChange}>
+          <MenuItem value={1}>Monday</MenuItem>
+          <MenuItem value={2}>Tuesday</MenuItem>
+          <MenuItem value={3}>Wednesday</MenuItem>
+          <MenuItem value={4}>Thursday</MenuItem>
+          <MenuItem value={5}>Friday</MenuItem>
+        </Select>
+      </FormControl>
     </div>
   );
 }
