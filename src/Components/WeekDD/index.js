@@ -1,10 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import Select from "@mui/material/Select";
 import FormControl from "@mui/material/FormControl";
 import MenuItem from "@mui/material/MenuItem";
 import InputLabel from "@mui/material/InputLabel";
 
-function WeekDD() {
+function WeekDD({ setWeek }) {
   function handleChange() {
     console.log("HANDLECHANGE WEEK DD FUNCTION");
   }

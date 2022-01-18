@@ -4,7 +4,7 @@ import FormControl from "@mui/material/FormControl";
 import MenuItem from "@mui/material/MenuItem";
 import InputLabel from "@mui/material/InputLabel";
 
-function ScoreDD() {
+function ScoreDD({ setScore }) {
   function handleChange() {
     console.log("HANDLECHANGE SCORE DD FUNCTION");
   }
