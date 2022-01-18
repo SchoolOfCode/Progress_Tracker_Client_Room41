@@ -5,15 +5,22 @@ import MenuItem from "@mui/material/MenuItem";
 import InputLabel from "@mui/material/InputLabel";
 
 function ScoreDD({ setScore }) {
-  function handleChange() {
+  function handleChange(event) {
     console.log("HANDLECHANGE SCORE DD FUNCTION");
+    setScore(event.target.value);
+    console.log("SCORE VALUE HERE:", event.target.value);
   }
 
   return (
     <div>
       <FormControl variant="standard" sx={{ m: 1, minWidth: 80 }}>
         <InputLabel>Score</InputLabel>
-        <Select label="score" onChange={handleChange}>
+        <Select
+          label="score"
+          onChange={(event) => {
+            handleChange(event);
+          }}
+        >
           <MenuItem value={1}>1</MenuItem>
           <MenuItem value={2}>2</MenuItem>
           <MenuItem value={3}>3</MenuItem>
