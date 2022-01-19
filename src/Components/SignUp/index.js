@@ -1,31 +1,31 @@
-import {Box, Button, TextField} from '@mui/material'
-import React, {useState} from 'react'
-import './SignUp.css'
-const url = 'http://localhost:3005'
+import { Box, Button, TextField } from "@mui/material";
+import React, { useState } from "react";
+import "./SignUp.css";
+const url = process.env.REACT_APP_API_URL;
 
-function SignUp({setWelcome, setName, setPassword}) {
-	const [signUpUser, setSignUpUser] = useState('')
-	const [signUpPass, setSignUpPass] = useState('')
+function SignUp({ setWelcome, setName, setPassword }) {
+  const [signUpUser, setSignUpUser] = useState("");
+  const [signUpPass, setSignUpPass] = useState("");
 
-	//! Function that sends the object to server
-	async function onClick(event) {
-		event.preventDefault()
-		try {
-			// const body = {signUpUser, signUpPass}
-			// console.log(body)
+  //! Function that sends the object to server
+  async function onClick(event) {
+    event.preventDefault();
+    try {
+      // const body = {signUpUser, signUpPass}
+      // console.log(body)
 
-			const response = await fetch(`${url}/user`, {
-				method: 'POST',
-				headers: {'Content-Type': 'application/json'},
-				body: JSON.stringify({name: signUpUser, password: signUpPass}),
-			})
-			setWelcome(true)
-			const data = await response.json()
-			console.log('data: ', data)
-		} catch (error) {
-			console.log(error.message)
-		}
-	}
+      const response = await fetch(`${url}/user`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name: signUpUser, password: signUpPass }),
+      });
+      setWelcome(true);
+      const data = await response.json();
+      console.log("data: ", data);
+    } catch (error) {
+      console.log(error.message);
+    }
+  }
 
 	return (
 		<div className='main-inputs'>
@@ -54,4 +54,4 @@ function SignUp({setWelcome, setName, setPassword}) {
 	)
 }
 
-export default SignUp
+export default SignUp;
