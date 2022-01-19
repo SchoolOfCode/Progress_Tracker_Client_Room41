@@ -23,6 +23,7 @@ function App() {
 
   return (
     <div className="main-app">
+      <h1 className="welcome-header">Hey there, Camper!</h1>
       <WelcomePage
         setWelcome={setWelcome}
         setName={setName}

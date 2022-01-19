@@ -1,8 +1,13 @@
+@import url("https://fonts.googleapis.com/css2?family=Homemade+Apple&display=swap");
+
+.main-header {
+  font-family: "Homemade Apple", cursive;
+}
+
 .main-parent-div {
   text-align: center;
   width: 30vw;
   margin: 50px auto;
-  
 }
 
 .main-app {
@@ -21,6 +26,6 @@
   color: white;
 }
 
-body{
+body {
   background-color: #fafaff;
 }

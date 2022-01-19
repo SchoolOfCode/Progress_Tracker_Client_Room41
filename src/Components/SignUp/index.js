@@ -19,7 +19,6 @@ function SignUp({ setWelcome, setName, setPassword }) {
   }
   return (
     <div>
-      <h1>Hey there, Camper!</h1>
       <div id="welcome-input">
         <Box
           component="form"
