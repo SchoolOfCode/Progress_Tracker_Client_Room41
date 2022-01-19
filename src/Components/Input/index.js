@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import WeekDD from "../WeekDD";
 import DayDD from "../DayDD";
 import ScoreDD from "../ScoreDD";
-import { Button } from "@mui/material";
+import { Button, Box } from "@mui/material";
 import "./Input.css";
-const API_URL = process.env.REACT_APP_API_URL;
+const url = process.env.REACT_APP_API_URL;
 
 function Input({ userTable }) {
   //! make the fields required
@@ -19,7 +19,7 @@ function Input({ userTable }) {
       const body = { week, day, score };
       console.log(body);
 
-      const response = await fetch(`${API_URL}`, {
+      const response = await fetch(`${url}`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(body),
@@ -36,7 +36,10 @@ function Input({ userTable }) {
 
   return (
     <div>
-      <div className="input-main-div">
+      <Box
+        sx={{ backgroundColor: "--light-primary", border: "solid 1px green" }}
+        className="input-main-div"
+      >
         <div className="welcome-text">
           <h1>Welcome, User...</h1>
         </div>
@@ -46,7 +49,7 @@ function Input({ userTable }) {
         <Button onClick={onClick} variant="text">
           Submit
         </Button>
-      </div>
+      </Box>
     </div>
   );
 }

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./Display.css";
-const url = "http://localhost:3005";
+const url = process.env.REACT_APP_API_URL;
 
 function Display({ userTable }) {
   const [progTable, setProgTable] = useState({});

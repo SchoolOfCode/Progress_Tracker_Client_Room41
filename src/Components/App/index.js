@@ -3,7 +3,7 @@ import Display from "../Display";
 import Input from "../Input";
 import WelcomePage from "../WelcomePage";
 import "./App.css";
-const API_URL = process.env.REACT_APP_API_URL;
+const url = process.env.REACT_APP_API_URL;
 
 function App() {
   const [welcome, setWelcome] = useState(false);
@@ -14,7 +14,7 @@ function App() {
 
   async function fetchUserTable() {
     try {
-      const response = await fetch(`${API_URL}/user`);
+      const response = await fetch(`${url}/user`);
       const data = await response.json();
       console.log("user table data: ", data);
       setUsertable(data);
