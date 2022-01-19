@@ -4,6 +4,8 @@ import "./SignUp.css";
 import { Box, TextField, Button } from "@mui/material";
 
 function SignUp({ setWelcome, setName, setPassword }) {
+  const [signUpUser, setSignUpUser] = useState("");
+
   function onUserChange(event) {
     setName(event.target.value);
     console.log("onUserChange FUNC: ");

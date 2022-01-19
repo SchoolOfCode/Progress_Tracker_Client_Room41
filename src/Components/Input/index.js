@@ -13,28 +13,18 @@ function Input() {
   const [day, setDay] = useState();
   const [score, setScore] = useState();
 
-  //! Function to collate week/day/score into an object and sets new state
-  function makeObj(week, day, score) {
-    tableData = {
-      weekValue: week,
-      dayValue: day,
-      scoreValue: score,
-    };
-    console.log(tableData);
-    return tableData;
-  }
-
   //! Function that sends the object to server
   async function onClick(event) {
     // if statement that stops the function if the object is empty
     event.preventDefault();
-    console.log("onClick func here with these values: ", week, day, score);
-    makeObj(week, day, score);
     try {
+      const body = { week, day, score };
+      console.log(body);
+
       const response = await fetch(`${url}`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(tableData), // body will come from the
+        body: JSON.stringify(tableData),
       });
       const data = await response.json();
       console.log("data: ", data);
@@ -43,8 +33,6 @@ function Input() {
       console.log(error.message);
     }
   }
-
-  // const userName =
 
   return (
     <div>
