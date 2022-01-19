@@ -1,19 +1,26 @@
 import React from "react";
-import Select from "@mui/material/Select";
-import FormControl from "@mui/material/FormControl";
-import MenuItem from "@mui/material/MenuItem";
-import InputLabel from "@mui/material/InputLabel";
+import { Select, FormControl, MenuItem, InputLabel } from "@mui/material";
+import "./ScoreDD.css";
 
-function ScoreDD() {
-  function handleChange() {
+function ScoreDD({ setScore }) {
+  function handleChange(event) {
     console.log("HANDLECHANGE SCORE DD FUNCTION");
+    setScore(event.target.value);
+    console.log("SCORE VALUE HERE:", event.target.value);
   }
 
   return (
     <div>
       <FormControl variant="standard" sx={{ m: 1, minWidth: 80 }}>
         <InputLabel>Score</InputLabel>
-        <Select label="score" onChange={handleChange}>
+        <Select
+          defaultValue={""}
+          label="score"
+          onChange={(event) => {
+            handleChange(event);
+          }}
+          required={true}
+        >
           <MenuItem value={1}>1</MenuItem>
           <MenuItem value={2}>2</MenuItem>
           <MenuItem value={3}>3</MenuItem>
