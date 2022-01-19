@@ -14,19 +14,18 @@ function App() {
 	const [userTable, setUsertable] = useState({})
 	console.log(name, password)
 
-	async function fetchUserTable() {
-		try {
-			const response = await fetch(`${url}/user`)
-			const data = await response.json()
-			console.log('user table data: ', data)
-			setUsertable(data)
-			console.log('userTable from APP: ', userTable)
-		} catch (error) {
-			console.log(error.message)
-		}
-	}
-
 	useEffect(() => {
+		async function fetchUserTable() {
+			try {
+				const response = await fetch(`${url}/user`)
+				const data = await response.json()
+				console.log('user table data: ', data)
+				setUsertable(data)
+				// console.log('userTable from APP: ', userTable)
+			} catch (error) {
+				console.log(error.message)
+			}
+		}
 		fetchUserTable()
 	}, [])
 
