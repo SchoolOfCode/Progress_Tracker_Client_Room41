@@ -11,6 +11,7 @@ function Display({userTable}) {
 			const data = await response.json()
 			console.log('progress table data: ', data)
 			setProgTable(data)
+			console.log('progress table state: ', progTable)
 		} catch (error) {
 			console.log(error.message)
 		}
@@ -20,12 +21,7 @@ function Display({userTable}) {
 		fetchProgressTable()
 	}, [])
 
-	console.log(
-		'this is the progress table',
-		progTable,
-		'this is the user table',
-		userTable
-	)
+	console.log('this is the user table', userTable)
 
 	return (
 		<div>

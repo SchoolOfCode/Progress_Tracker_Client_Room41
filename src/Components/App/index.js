@@ -18,6 +18,7 @@ function App() {
 			const data = await response.json()
 			console.log('user table data: ', data)
 			setUsertable(data)
+			console.log('userTable from APP: ', userTable)
 		} catch (error) {
 			console.log(error.message)
 		}
