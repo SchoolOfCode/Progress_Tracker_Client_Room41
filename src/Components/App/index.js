@@ -5,7 +5,7 @@ import WelcomePage from "../WelcomePage";
 import "./App.css";
 const url = process.env.REACT_APP_API_URL;
 
-//! chek deployment branch is upstream
+//! check deployment branch is upstream
 
 function App() {
   const [welcome, setWelcome] = useState(false);
