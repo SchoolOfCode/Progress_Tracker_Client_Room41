@@ -26,7 +26,7 @@ function App() {
 
   useEffect(() => {
     fetchUserTable();
-  }, []);
+  });
 
   if (welcome)
     return (

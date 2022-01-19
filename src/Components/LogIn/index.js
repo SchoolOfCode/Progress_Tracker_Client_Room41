@@ -18,7 +18,7 @@ function Login() {
         >
           <TextField label="Username" variant="standard" />
           <TextField label="Password" variant="standard" />
-          <Button>Login up</Button>
+          <Button>Login</Button>
         </Box>
       </div>
     </div>
