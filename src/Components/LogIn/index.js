@@ -4,9 +4,10 @@ import "./Login.css";
 
 function Login() {
   return (
-    <div>
+    <div className='main-inputs'>
       {" "}
-      <p>already a user?</p>
+      <p className="sign-up">already a user?</p>
+
       <div id="login-input">
         <Box
           component="form"

@@ -1,0 +1,10 @@
+.main-inputs {
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+p.sign-up {
+  position: absolute;
+  top: -20px;
+}

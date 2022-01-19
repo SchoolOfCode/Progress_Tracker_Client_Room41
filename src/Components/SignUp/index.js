@@ -28,7 +28,7 @@ function SignUp({setWelcome, setName, setPassword}) {
 	}
 
 	return (
-		<div>
+		<div className='main-inputs'>
 			<div id='welcome-input'>
 				<Box
 					component='form'
