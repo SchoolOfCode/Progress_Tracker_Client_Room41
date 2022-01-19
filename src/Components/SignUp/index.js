@@ -1,24 +1,31 @@
 import React, { useState } from "react";
 import "./SignUp.css";
-
 import { Box, TextField, Button } from "@mui/material";
+const url = "http://localhost:3005/";
 
 function SignUp({ setWelcome, setName, setPassword }) {
   const [signUpUser, setSignUpUser] = useState("");
+  const [signUpPass, setSignUpPass] = useState("");
 
-  function onUserChange(event) {
-    setName(event.target.value);
-    console.log("onUserChange FUNC: ");
-  }
-  function onPassChange(event) {
-    setPassword(event.target.value);
-    console.log("onPassChange FUNC: ");
+  //! Function that sends the object to server
+  async function onClick(event) {
+    event.preventDefault();
+    try {
+      const body = { signUpUser, signUpPass };
+      console.log(body);
+
+      const response = await fetch(`${url}`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(body),
+      });
+      const data = await response.json();
+      console.log("data: ", data);
+    } catch (error) {
+      console.log(error.message);
+    }
   }
 
-  function handleClick(event) {
-    console.log("ONCLICK FUNCTION");
-    setWelcome(true);
-  }
   return (
     <div>
       <div id="welcome-input">
@@ -31,22 +38,16 @@ function SignUp({ setWelcome, setName, setPassword }) {
           autoComplete="off"
         >
           <TextField
-            onChange={onUserChange}
+            onChange={(e) => setSignUpUser(e.target.value)}
             label="What shall I call you?"
             variant="standard"
           />
           <TextField
-            onChange={onPassChange}
+            onChange={(e) => setSignUpPass(e.target.value)}
             label="and a password?"
             variant="standard"
           />
-          <Button
-            onClick={(event) => {
-              handleClick(event);
-            }}
-          >
-            Sign up
-          </Button>
+          <Button onClick={onClick}>Sign in</Button>
         </Box>
       </div>
     </div>

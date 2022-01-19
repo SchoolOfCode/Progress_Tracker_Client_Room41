@@ -5,7 +5,6 @@ import ScoreDD from "../ScoreDD";
 import { Button, FormControl } from "@mui/material";
 import "./Input.css";
 const url = "http://localhost:3005/";
-let tableData = {};
 
 function Input() {
   //! make the fields required
@@ -24,7 +23,7 @@ function Input() {
       const response = await fetch(`${url}`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(tableData),
+        body: JSON.stringify(body),
       });
       const data = await response.json();
       console.log("data: ", data);
