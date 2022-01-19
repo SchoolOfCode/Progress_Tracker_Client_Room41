@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import WeekDD from "../WeekDD";
 import DayDD from "../DayDD";
 import ScoreDD from "../ScoreDD";
-import { Button, FormControl } from "@mui/material";
+import { Button } from "@mui/material";
 import "./Input.css";
-const url = "http://localhost:3005/";
+const API_URL = process.env.REACT_APP_API_URL;
 
 function Input({ userTable }) {
   //! make the fields required
@@ -14,13 +14,12 @@ function Input({ userTable }) {
 
   //! Function that sends the object to server
   async function onClick(event) {
-    // if statement that stops the function if the object is empty
     event.preventDefault();
     try {
       const body = { week, day, score };
       console.log(body);
 
-      const response = await fetch(`${url}`, {
+      const response = await fetch(`${API_URL}`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(body),
