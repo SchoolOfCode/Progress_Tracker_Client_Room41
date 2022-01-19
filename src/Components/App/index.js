@@ -2,20 +2,36 @@ import "./App.css";
 import WelcomePage from "../WelcomePage";
 import Input from "../Input";
 import Display from "../Display";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+const url = "http://localhost:3005/";
 
 function App() {
   const [welcome, setWelcome] = useState(false);
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
-
+  const [userTable, setUsertable] = useState({});
   console.log(name, password);
+
+  async function fetchUserTable() {
+    try {
+      const response = await fetch(`${url}/user`);
+      const data = await response.json();
+      console.log("user table data: ", data);
+      setUsertable(data);
+    } catch (error) {
+      console.log(error.message);
+    }
+  }
+
+  useEffect(() => {
+    fetchUserTable();
+  }, []);
 
   if (welcome)
     return (
       <div className="main-parent-div">
-        <Input name={name} />
-        <Display name={name} />
+        <Input userTable={userTable} name={name} />
+        <Display userTable={userTable} name={name} />
       </div>
     );
 

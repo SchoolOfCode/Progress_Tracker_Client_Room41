@@ -6,7 +6,7 @@ import { Button, FormControl } from "@mui/material";
 import "./Input.css";
 const url = "http://localhost:3005/";
 
-function Input() {
+function Input({ userTable }) {
   //! make the fields required
   const [week, setWeek] = useState();
   const [day, setDay] = useState();
@@ -32,6 +32,8 @@ function Input() {
       console.log(error.message);
     }
   }
+
+  console.log("This is the user table:", userTable);
 
   return (
     <div>
