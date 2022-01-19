@@ -19,7 +19,12 @@ function Input({userTable}) {
 			const response = await fetch(`${url}/progress`, {
 				method: 'POST',
 				headers: {'Content-Type': 'application/json'},
-				body: JSON.stringify({week: week, day: day, score: score}),
+				body: JSON.stringify({
+					week: week,
+					day: day,
+					score: score,
+					link_id: userTable.payload[0].uid,
+				}),
 			})
 			const data = await response.json()
 			console.log('progress data: ', data)
@@ -33,7 +38,7 @@ function Input({userTable}) {
 		}
 	}
 
-	console.log('This is the user table:', userTable)
+	console.log('This is the user table[0].uid:', userTable.payload[0].uid)
 
 	return (
 		<div>
