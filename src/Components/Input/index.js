@@ -23,6 +23,7 @@ function Input({userTable}) {
 					week: week,
 					day: day,
 					score: score,
+					//when new user is registered, add link_id:userTable.payload[payload.length-1].uid
 					link_id: userTable.payload[0].uid,
 				}),
 			})

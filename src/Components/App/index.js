@@ -96,7 +96,7 @@ function App() {
 	useEffect(() => {
 		async function fetchUserTable() {
 			try {
-				const response = await fetch(`${url}/user`)
+				const response = await fetch(`${url}/register`)
 				const data = await response.json()
 				console.log('user table data: ', data)
 				setUsertable(data)

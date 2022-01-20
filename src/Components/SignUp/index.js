@@ -11,10 +11,11 @@ function SignUp({setWelcome, setName, setPassword}) {
 	function onClick(event) {
 		event.preventDefault()
 		fetchUser()
+		fetchStats()
 	}
 	async function fetchUser() {
 		try {
-			const response = await fetch(`${url}/user`, {
+			const response = await fetch(`${url}/register`, {
 				method: 'POST',
 				headers: {'Content-Type': 'application/json'},
 				body: JSON.stringify({name: signUpUser, password: signUpPass}),
@@ -25,6 +26,11 @@ function SignUp({setWelcome, setName, setPassword}) {
 		} catch (error) {
 			console.log(error.message)
 		}
+	}
+	async function fetchStats() {
+		const response = await fetch(`${url}/progress`)
+		const data = await response.json()
+		console.log('data from register button: ', data)
 	}
 	// useEffect(() => {
 	// 	onClick()
