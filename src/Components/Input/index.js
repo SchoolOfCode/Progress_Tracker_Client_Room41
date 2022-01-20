@@ -16,9 +16,9 @@ function Input({userTable, name}) {
 	function onClick(event) {
 		event.preventDefault()
 		updateStats()
+		fetchUpdatedStats()
 	}
 	async function updateStats() {
-		// event.preventDefault()
 		try {
 			const response = await fetch(`${url}/progress`, {
 				method: 'POST',
@@ -35,6 +35,18 @@ function Input({userTable, name}) {
 			console.log('progress week: ', week)
 			console.log('progress day: ', day)
 			console.log('progress score: ', score)
+
+			// function that waits a second and then sends a fetch
+		} catch (error) {
+			console.log(error.message)
+		}
+	}
+	async function fetchUpdatedStats() {
+		// event.preventDefault()
+		try {
+			const response = await fetch(`${url}/progress`)
+			const data = await response.json()
+			console.log('updated data after input: ', data)
 
 			// function that waits a second and then sends a fetch
 		} catch (error) {

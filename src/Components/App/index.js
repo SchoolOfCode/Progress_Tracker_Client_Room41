@@ -45,16 +45,6 @@ function App() {
 			</div>
 		)
 
-	if (welcome)
-		return (
-			<div className='main-parent-div'>
-				<Input userTable={userTable} name={name} />
-				<Display userTable={userTable} name={name} />
-			</div>
-		)
-
-	// useEffect that fetched data using the 'name' to send a GET request for the correct table
-
 	// useEffect that fetched data using the 'name' to send a GET request for the correct table
 	return (
 		<div>
