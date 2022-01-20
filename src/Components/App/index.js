@@ -23,7 +23,6 @@ function App() {
         const data = await response.json();
         console.log("user table data: ", data);
         setUsertable(data);
-        // console.log('userTable from APP: ', userTable)
       } catch (error) {
         console.log(error.message);
       }
@@ -37,13 +36,6 @@ function App() {
   // 	console.log('allstats: ', data)
   // }
   // getAllStats()
-  if (welcome)
-    return (
-      <div className="main-parent-div">
-        <Input userTable={userTable} name={name} />
-        <Display userTable={userTable} name={name} />
-      </div>
-    );
 
   if (welcome)
     return (

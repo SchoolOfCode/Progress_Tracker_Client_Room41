@@ -26,7 +26,7 @@ function Display({ userTable }) {
 
   return (
     <div>
-      <h1>Here is where the data will be displayed using reactChart</h1>
+      <h1>🔥 Here's your data 🔥</h1>
       <div className="chart">
         <DoughnutChart />
         <BarChart />
