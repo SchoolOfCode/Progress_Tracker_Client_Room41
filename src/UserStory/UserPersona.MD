@@ -14,4 +14,4 @@ Gabriel Magni
 
 Three out of four interviewed persons said that they would like to keep track of theirs morning quiz progress during their 16 weeks of studying in Bootcamp.
 Gabriel said he want to see the weekly progress rather then just day only progress, which we took into consideration during our planning.
-Katherine Tweeddale suggested that she would like to see her progress braked down by topics, so she knows later on which topics to focus.
+Katherine Tweeddale suggested that she would like to see her progress braked down by topics, so she knows later on which topics to focus (that feature we get into our wishList components to implement it if time left, but there were no enough time but we will come back to it later).
