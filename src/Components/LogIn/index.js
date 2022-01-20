@@ -3,7 +3,6 @@ import React, { useState } from "react";
 import "./Login.css";
 const url = process.env.REACT_APP_API_URL || "http://localhost:3005";
 
-// url/login
 function Login({ setWelcome }) {
   const [loginUser, setLoginUser] = useState("");
   const [loginpPass, setLoginUpPass] = useState("");
