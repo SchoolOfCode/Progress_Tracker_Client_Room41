@@ -6,16 +6,19 @@ import WeekDD from '../WeekDD'
 import './Input.css'
 const url = process.env.REACT_APP_API_URL || 'http://localhost:3005'
 
-function Input({userTable}) {
+function Input({userTable, name}) {
 	//! make the fields required
 	const [week, setWeek] = useState()
 	const [day, setDay] = useState()
 	const [score, setScore] = useState()
 
-
 	//! Function that sends the object to server
-	async function onClick(event) {
+	function onClick(event) {
 		event.preventDefault()
+		updateStats()
+	}
+	async function updateStats() {
+		// event.preventDefault()
 		try {
 			const response = await fetch(`${url}/progress`, {
 				method: 'POST',
@@ -24,8 +27,7 @@ function Input({userTable}) {
 					week: week,
 					day: day,
 					score: score,
-					//when new user is registered, add link_id:userTable.payload[payload.length-1].uid
-					link_id: userTable.payload[0].uid,
+					link_id: userTable.payload[userTable.payload.length - 1].uid + 1,
 				}),
 			})
 			const data = await response.json()
@@ -40,15 +42,11 @@ function Input({userTable}) {
 		}
 	}
 
-	console.log('This is the user table[0].uid:', userTable.payload[0].uid)
-
-
 	return (
 		<div>
-			<Box
-				className='input-main-div'>
+			<Box className='input-main-div'>
 				<div className='welcome-text'>
-					<h1>Welcome, User...</h1>
+					<h1>Welcome, {name}</h1>
 				</div>
 				<WeekDD setWeek={setWeek} />
 				<DayDD setDay={setDay} />
@@ -62,4 +60,3 @@ function Input({userTable}) {
 }
 
 export default Input
-

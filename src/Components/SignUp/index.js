@@ -12,6 +12,7 @@ function SignUp({setWelcome, setName, setPassword}) {
 		event.preventDefault()
 		fetchUser()
 		fetchStats()
+		setName(signUpUser)
 	}
 	async function fetchUser() {
 		try {
@@ -32,14 +33,9 @@ function SignUp({setWelcome, setName, setPassword}) {
 		const data = await response.json()
 		console.log('data from register button: ', data)
 	}
-	// useEffect(() => {
-	// 	onClick()
-	// }, [])
-
 
 	return (
 		<div className='main-inputs'>
-
 			<div id='welcome-input'>
 				<Box
 					component='form'

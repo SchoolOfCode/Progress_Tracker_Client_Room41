@@ -11,7 +11,7 @@ function WelcomePage({setWelcome, setName, setPassword}) {
 				setName={setName}
 				setPassword={setPassword}
 			/>
-			<Login setWelcome={setWelcome} />
+			<Login setWelcome={setWelcome} setName={setName} />
 		</div>
 	)
 }
