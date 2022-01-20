@@ -1,6 +1,10 @@
 import React, { useEffect, useState } from "react";
+import DoughnutChart from "../DoughnutChart";
+import BarChart from "../BarChart";
+import Research from "../Research";
 import "./Display.css";
-const url = process.env.REACT_APP_API_URL;
+
+const url = process.env.REACT_APP_API_URL || "http://localhost:3005";
 
 function Display({ userTable }) {
   const [progTable, setProgTable] = useState({});
@@ -18,20 +22,25 @@ function Display({ userTable }) {
     }
     fetchProgressTable();
   }, []);
-  console.log("progress table state: ", progTable);
 
-  console.log("this is the user table", userTable);
-
-  console.log("this is the user table", userTable);
 
   return (
+    <div>
+      <h1>Here is where the data will be displayed using reactChart</h1>
+      <div className="chart">
+        <DoughnutChart />
+        <BarChart />
+        <Research />
     <div className="display-div">
       <p className="test-chart">chart</p>
       <h2 className="display-h1">
         Here is where the data will be displayed using reactChart
       </h2>
+
     </div>
-  );
-}
+      </div>
+
+ )
+};
 
 export default Display;

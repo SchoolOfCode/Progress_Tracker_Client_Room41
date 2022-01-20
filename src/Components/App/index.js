@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from "react";
 import logo from "./soc-logo.png";
 import success from "./Successful completion of project.png"
@@ -6,15 +5,47 @@ import Display from "../Display";
 import Input from "../Input";
 import WelcomePage from "../WelcomePage";
 import "./App.css";
-const url = process.env.REACT_APP_API_URL;
+const url = process.env.REACT_APP_API_URL || "http://localhost:3005";
+
+//! check deployment branch is upstream
 
 
 function App() {
-	const [welcome, setWelcome] = useState(false)
-	const [name, setName] = useState('')
-	const [password, setPassword] = useState('')
-	const [userTable, setUsertable] = useState({})
-	console.log(name, password)
+  const [welcome, setWelcome] = useState(false);
+  const [name, setName] = useState("");
+  const [password, setPassword] = useState("");
+  const [userTable, setUsertable] = useState({});
+  console.log(name, password);
+
+  useEffect(() => {
+    async function fetchUserTable() {
+      try {
+        const response = await fetch(`${url}/register`);
+        const data = await response.json();
+        console.log("user table data: ", data);
+        setUsertable(data);
+        // console.log('userTable from APP: ', userTable)
+      } catch (error) {
+        console.log(error.message);
+      }
+    }
+    fetchUserTable();
+  }, []);
+
+  // async function getAllStats() {
+  // 	const response = await fetch(`${url}/progress`)
+  // 	const data = await response.json()
+  // 	console.log('allstats: ', data)
+  // }
+  // getAllStats()
+  if (welcome)
+    return (
+      <div className="main-parent-div">
+        <Input userTable={userTable} name={name} />
+        <Display userTable={userTable} name={name} />
+      </div>
+    );
+
 
 	useEffect(() => {
 		async function fetchUserTable() {
@@ -53,7 +84,6 @@ function App() {
         setName={setName}
         setPassword={setPassword}
       />
-      <p>Input and display hidden until welcome page passed.</p>
     </div>
   );
 
