@@ -9,10 +9,8 @@ import {
   Tooltip,
 } from "chart.js";
 import { useEffect, useState } from "react";
-import { Bar } from "react-chartjs-2";
 import Display from "../Display";
 import Input from "../Input";
-import Research from "../Research";
 import WelcomePage from "../WelcomePage";
 import "./App.css";
 const url = process.env.REACT_APP_API_URL || "http://localhost:3005";
