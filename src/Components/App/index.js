@@ -29,12 +29,12 @@ function App() {
 		fetchUserTable()
 	}, [])
 
-	async function getAllStats() {
-		const response = await fetch(`${url}/progress`)
-		const data = await response.json()
-		console.log('allstats: ', data)
-	}
-	getAllStats()
+	// async function getAllStats() {
+	// 	const response = await fetch(`${url}/progress`)
+	// 	const data = await response.json()
+	// 	console.log('allstats: ', data)
+	// }
+	// getAllStats()
 	if (welcome)
 		return (
 			<div className='main-parent-div'>

@@ -8,12 +8,12 @@ function SignUp({setWelcome, setName, setPassword}) {
 	const [signUpPass, setSignUpPass] = useState('')
 
 	//! Function that sends the object to server
-	async function onClick(event) {
+	function onClick(event) {
 		event.preventDefault()
+		fetchUser()
+	}
+	async function fetchUser() {
 		try {
-			// const body = {signUpUser, signUpPass}
-			// console.log(body)
-
 			const response = await fetch(`${url}/user`, {
 				method: 'POST',
 				headers: {'Content-Type': 'application/json'},
@@ -26,6 +26,9 @@ function SignUp({setWelcome, setName, setPassword}) {
 			console.log(error.message)
 		}
 	}
+	// useEffect(() => {
+	// 	onClick()
+	// }, [])
 
 	return (
 		<div>
