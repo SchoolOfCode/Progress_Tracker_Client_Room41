@@ -10,6 +10,7 @@ import {
   Title,
   Tooltip,
 } from "chart.js";
+import "./BarChart.css";
 ChartJS.register(
   CategoryScale,
   LinearScale,
@@ -72,7 +73,9 @@ export const data = {
 const BarChart = () => {
   return (
     <div>
-      <Bar options={options} data={data} />
+      <div className="bar-chart">
+        <Bar options={options} data={data} />
+      </div>
     </div>
   );
 };

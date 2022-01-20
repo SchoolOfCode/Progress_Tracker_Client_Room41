@@ -47,11 +47,14 @@ function Input({userTable, name}) {
 			<Box className='input-main-div'>
 				<div className='welcome-text'>
 					<h1>Welcome, {name}</h1>
+					<div className='underline'></div>
 				</div>
 				<WeekDD setWeek={setWeek} />
 				<DayDD setDay={setDay} />
 				<ScoreDD setScore={setScore} />
-				<Button onClick={onClick} variant='text'>
+				<div id='sign-line' className='underline'></div>
+
+				<Button onClick={onClick} variant='outlined'>
 					Submit
 				</Button>
 			</Box>

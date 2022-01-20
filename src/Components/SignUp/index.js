@@ -54,8 +54,11 @@ function SignUp({setWelcome, setName, setPassword}) {
 						label='and a password?'
 						variant='standard'
 					/>
-					<Button onClick={onClick}>Sign in</Button>
+					<Button variant='outlined' onClick={onClick}>
+						Register
+					</Button>
 				</Box>
+				<div id='sign-line' className='underline'></div>
 			</div>
 		</div>
 	)
