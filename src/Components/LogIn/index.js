@@ -36,7 +36,6 @@ function Login({ setWelcome }) {
   return (
     <div className="main-inputs">
       {" "}
-      <p>already a user?</p>
       <div id="login-input">
         <Box
           component="form"
@@ -56,7 +55,9 @@ function Login({ setWelcome }) {
             variant="standard"
             onChange={(e) => setLoginUpPass(e.target.value)}
           />
-          <Button onClick={onClick}>Login</Button>
+          <Button variant="outlined" onClick={onClick}>
+            Login
+          </Button>
         </Box>
       </div>
     </div>

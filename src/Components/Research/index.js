@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Button } from "@mui/material";
+import "./Research.css";
 
 function Research() {
   const [value, setValue] = useState(0);
@@ -27,9 +28,11 @@ function Research() {
   return (
     <section>
       <h2>Cheat Sheets</h2>
+      <div className="underline"></div>
       {referenceArray.map((item, index) => {
         return (
           <Button
+            variant="outlined"
             key={index}
             onClick={() => {
               setValue(index);
@@ -39,11 +42,13 @@ function Research() {
           </Button>
         );
       })}
-      <h4>{tech}</h4>
+      <h4 className="job-info">{tech}</h4>
       {website.map((website, index) => {
         return (
           <div key={index}>
-            <p>{website}</p>
+            <a href={website} target="_blank" rel="noreferrer">
+              {website}
+            </a>
           </div>
         );
       })}

@@ -14,3 +14,7 @@ div.welcome-text {
 .MuiFormControl-root.css-1agwao2-MuiFormControl-root {
   margin: 0;
 }
+
+.input-main-div {
+  position: absolute;
+}

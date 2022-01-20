@@ -26,7 +26,8 @@ function Display({ userTable }) {
 
   return (
     <div>
-      <h1>🔥 Here's your data 🔥</h1>
+      <h1 className="display-title">🔥 Here's your data 🔥</h1>
+      <div className="underline"></div>
       <div className="chart">
         <DoughnutChart />
         <BarChart />
