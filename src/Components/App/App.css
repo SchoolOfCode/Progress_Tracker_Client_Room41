@@ -1,5 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Homemade+Apple&display=swap");
 
+.boss-level {
+  margin-top: 80px;
+}
+
 .main-parent-div {
   text-align: center;
 }
@@ -65,5 +69,5 @@ img.success {
   display: flex;
   margin-left: auto;
   z-index: 0;
-  filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4))
+  filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));
 }

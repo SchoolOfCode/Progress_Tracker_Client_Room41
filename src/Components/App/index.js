@@ -47,7 +47,7 @@ function App() {
 
 	// useEffect that fetched data using the 'name' to send a GET request for the correct table
 	return (
-		<div>
+		<div className='boss-level'>
 			<img className='logo' src={logo} alt='School-of-Code-logo'></img>
 			<h1 className='welcome-header'>Hey there, Camper!</h1>
 			<img
