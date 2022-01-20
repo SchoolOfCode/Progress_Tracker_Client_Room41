@@ -30,7 +30,7 @@ function Research() {
       {referenceArray.map((item, index) => {
         return (
           <Button
-            key={item.id}
+            key={index}
             onClick={() => {
               setValue(index);
             }}
@@ -42,7 +42,7 @@ function Research() {
       <h4>{tech}</h4>
       {website.map((website, index) => {
         return (
-          <div>
+          <div key={index}>
             <p>{website}</p>
           </div>
         );
