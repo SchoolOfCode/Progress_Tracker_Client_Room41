@@ -13,6 +13,13 @@ function Login({setWelcome}) {
 		event.preventDefault()
 		fetchUser()
 	}
+	//id set id
+	//is loged setIslogged(false)
+	//isregistered setIsregistered(false)
+	//if  click register button => isregistered(true)
+	//id(data.payload[payload.length-1].uid)
+	//if click on login button => isloggedin(true) isregistered(false)
+	//id(data.payload[0].uid)
 	async function fetchUser() {
 		try {
 			const response = await fetch(`${url}/login`, {
