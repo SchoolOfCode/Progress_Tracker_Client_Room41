@@ -13,6 +13,7 @@ import { Bar } from "react-chartjs-2";
 import Display from "../Display";
 import Input from "../Input";
 import WelcomePage from "../WelcomePage";
+import Research from "../Research";
 import "./App.css";
 const url = process.env.REACT_APP_API_URL || "http://localhost:3005";
 ChartJS.register(
@@ -132,6 +133,7 @@ function App() {
         setName={setName}
         setPassword={setPassword}
       />
+      <Research />
       <p>Input and display hidden until welcome page passed.</p>
       <Bar options={options} data={data} />
     </div>
