@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Button } from "@mui/material";
 
 function Research() {
   const [value, setValue] = useState(0);
@@ -6,17 +7,17 @@ function Research() {
   const referenceArray = [
     {
       order: 3,
-      website: ["Tote bag sartorial."],
+      website: ["https://flexbox.malven.co/"],
       tech: "FLEXBOX",
     },
     {
       order: 2,
-      website: ["Hashtag drinking ."],
+      website: ["https://grid.malven.co/"],
       tech: "GRID",
     },
     {
       order: 1,
-      website: ["I'm baby woke mumblecore stumptown."],
+      website: ["https://education.github.com/git-cheat-sheet-education.pdf"],
       tech: "GIT",
     },
   ];
@@ -28,14 +29,14 @@ function Research() {
       <h2>Cheat Sheets</h2>
       {referenceArray.map((item, index) => {
         return (
-          <button
+          <Button
             key={item.id}
             onClick={() => {
               setValue(index);
             }}
           >
             {item.tech}
-          </button>
+          </Button>
         );
       })}
       <h4>{tech}</h4>
