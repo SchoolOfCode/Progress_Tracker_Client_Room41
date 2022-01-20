@@ -12,6 +12,7 @@ import {useEffect, useState} from 'react'
 import {Bar} from 'react-chartjs-2'
 import Display from '../Display'
 import Input from '../Input'
+import Research from '../Research'
 import WelcomePage from '../WelcomePage'
 import './App.css'
 const url = process.env.REACT_APP_API_URL || 'http://localhost:3005'
@@ -71,13 +72,13 @@ export const data = {
 	labels,
 	datasets: [
 		{
-			label: 'Dataset 1',
+			label: 'Total Questions',
 			data: dummyData2,
 			borderColor: 'rgb(255, 99, 132)',
 			backgroundColor: 'rgba(255, 99, 132, 0.5)',
 		},
 		{
-			label: 'Dataset 2',
+			label: 'Correct Answers',
 			data: dummyData,
 			borderColor: 'rgb(53, 162, 235)',
 			backgroundColor: 'rgba(53, 162, 235, 0.5)',
@@ -132,6 +133,7 @@ function App() {
 				setName={setName}
 				setPassword={setPassword}
 			/>
+			<Research />
 			<p>Input and display hidden until welcome page passed.</p>
 			<Bar options={options} data={data} />
 		</div>

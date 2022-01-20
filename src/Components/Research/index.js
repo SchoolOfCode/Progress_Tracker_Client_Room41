@@ -1,65 +1,51 @@
-import React, { useState, useEffect } from "react";
-import { FaAngleDoubleRight } from "react-icons/fa";
+import React, { useState } from "react";
 
-const url = "https://course-api.com/react-tabs-project";
 function Research() {
-  const [loading, setLoading] = useState(true);
-  const [jobs, setJobs] = useState([]);
   const [value, setValue] = useState(0);
 
-  async function fetchJobs() {
-    const response = await fetch(url);
-    const newJobs = await response.json();
-    setJobs(newJobs);
-    setLoading(false);
-  }
+  const referenceArray = [
+    {
+      order: 3,
+      website: ["Tote bag sartorial."],
+      tech: "FLEXBOX",
+    },
+    {
+      order: 2,
+      website: ["Hashtag drinking ."],
+      tech: "GRID",
+    },
+    {
+      order: 1,
+      website: ["I'm baby woke mumblecore stumptown."],
+      tech: "GIT",
+    },
+  ];
 
-  useEffect(() => {
-    fetchJobs();
-  }, []);
-
-  if (loading) {
-    return <section className="section loading">loading...</section>;
-  }
-  const { company, dates, duties, title } = jobs[value];
+  const { website, tech } = referenceArray[value];
 
   return (
-    <section className="section">
-      <div className="title">
-        <h2>experience</h2>
-        <div className="underline"></div>
-      </div>
-      <div className="jobs-centre">
-        <div className="btn-container">
-          {jobs.map((item, index) => {
-            return (
-              <button
-                key={item.id}
-                onClick={() => {
-                  setValue(index);
-                }}
-                className={`job-btn ${index === value && "active-btn"}`}
-              >
-                {item.company}
-              </button>
-            );
-          })}
-        </div>
-        {}
-        <article className="job-info">
-          <h3>{title}</h3>
-          <h4>{company}</h4>
-          <p className="job-date">{dates}</p>
-          {duties.map((duty, index) => {
-            return (
-              <div className="job-desc">
-                <FaAngleDoubleRight className="job-icon" />
-                <p>{duty}</p>
-              </div>
-            );
-          })}
-        </article>
-      </div>
+    <section>
+      <h2>Cheat Sheets</h2>
+      {referenceArray.map((item, index) => {
+        return (
+          <button
+            key={item.id}
+            onClick={() => {
+              setValue(index);
+            }}
+          >
+            {item.tech}
+          </button>
+        );
+      })}
+      <h4>{tech}</h4>
+      {website.map((website, index) => {
+        return (
+          <div>
+            <p>{website}</p>
+          </div>
+        );
+      })}
     </section>
   );
 }
