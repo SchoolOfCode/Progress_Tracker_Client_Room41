@@ -23,6 +23,7 @@ function Display({ userTable }) {
     fetchProgressTable();
   }, []);
 
+  console.log(progTable);
 
   return (
     <div>
@@ -31,16 +32,15 @@ function Display({ userTable }) {
         <DoughnutChart />
         <BarChart />
         <Research />
-    <div className="display-div">
-      <p className="test-chart">chart</p>
-      <h2 className="display-h1">
-        Here is where the data will be displayed using reactChart
-      </h2>
-
-    </div>
+        <div className="display-div">
+          <p className="test-chart">chart</p>
+          <h2 className="display-h1">
+            Here is where the data will be displayed using reactChart
+          </h2>
+        </div>
       </div>
-
- )
-};
+    </div>
+  );
+}
 
 export default Display;
