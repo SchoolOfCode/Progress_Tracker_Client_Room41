@@ -10,7 +10,7 @@ import React, {useEffect, useState} from 'react'
 // 	Legend,
 // } from 'chart.js'
 // import {Line} from 'react-chartjs-2'
-import BarChart from '../BarChart'
+// import BarChart from '../BarChart'
 import './Display.css'
 const url = process.env.REACT_APP_API_URL || 'http://localhost:3005'
 
@@ -58,10 +58,10 @@ function Display({userTable}) {
 		<div>
 			<h1>Here is where the data will be displayed using reactChart</h1>
 			<div className='chart'></div>
-			<BarChart />
 		</div>
 	)
 }
+// <BarChart />
 // <Line data={chartData} />
 
 export default Display
