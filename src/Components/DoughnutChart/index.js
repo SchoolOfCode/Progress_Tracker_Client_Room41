@@ -29,11 +29,11 @@ export const data = {
   ],
 };
 
-function DoughnutChart({ chartData }) {
+function DoughnutChart() {
   return (
     <div>
       <Doughnut
-        data={chartData}
+        data={data}
         options={{
           plugins: {
             title: {
