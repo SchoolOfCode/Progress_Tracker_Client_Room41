@@ -30,17 +30,6 @@ export const options = {
       text: "Chart.js Line Chart",
     },
   },
-  scales: {
-    yAxes: [
-      {
-        ticks: {
-          beginAtZero: true,
-          min: 0,
-          max: 100,
-        },
-      },
-    ],
-  },
 };
 const labels = [
   "Week1",
