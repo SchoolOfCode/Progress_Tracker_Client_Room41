@@ -12,6 +12,7 @@ function Input({userTable}) {
 	const [day, setDay] = useState()
 	const [score, setScore] = useState()
 
+
 	//! Function that sends the object to server
 	async function onClick(event) {
 		event.preventDefault()
@@ -41,10 +42,10 @@ function Input({userTable}) {
 
 	console.log('This is the user table[0].uid:', userTable.payload[0].uid)
 
+
 	return (
 		<div>
 			<Box
-				sx={{backgroundColor: '--light-primary', border: 'solid 1px green'}}
 				className='input-main-div'>
 				<div className='welcome-text'>
 					<h1>Welcome, User...</h1>
@@ -61,3 +62,4 @@ function Input({userTable}) {
 }
 
 export default Input
+

@@ -3,6 +3,7 @@ import React, {useState} from 'react'
 import './Login.css'
 const url = process.env.REACT_APP_API_URL || 'http://localhost:3005'
 
+
 // url/login
 function Login({setWelcome}) {
 	const [loginUser, setLoginUser] = useState('')
@@ -35,7 +36,7 @@ function Login({setWelcome}) {
 		}
 	}
 	return (
-		<div>
+		<div className='main-inputs'>
 			{' '}
 			<p>already a user?</p>
 			<div id='login-input'>
@@ -61,6 +62,6 @@ function Login({setWelcome}) {
 			</div>
 		</div>
 	)
-}
+
 
 export default Login
