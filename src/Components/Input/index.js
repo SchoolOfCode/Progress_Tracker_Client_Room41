@@ -6,6 +6,8 @@ import { Button, Box } from "@mui/material";
 import "./Input.css";
 const url = process.env.REACT_APP_API_URL;
 
+
+
 function Input({ userTable }) {
   //! make the fields required
   const [week, setWeek] = useState();
@@ -34,19 +36,17 @@ function Input({ userTable }) {
 
   console.log("This is the user table:", userTable);
 
+
   return (
     <div>
-      <Box
-        sx={{ backgroundColor: "--light-primary", border: "solid 1px green" }}
-        className="input-main-div"
-      >
+      <Box>
         <div className="welcome-text">
-          <h1>Welcome, User...</h1>
+          <h2>Welcome, User...</h2>
         </div>
         <WeekDD setWeek={setWeek} />
         <DayDD setDay={setDay} />
         <ScoreDD setScore={setScore} />
-        <Button onClick={onClick} variant="text">
+        <Button onClick={onClick} variant="text" >
           Submit
         </Button>
       </Box>
@@ -55,3 +55,7 @@ function Input({ userTable }) {
 }
 
 export default Input;
+
+
+// style={{ color: "black" }}
+//   return <Button >Hook</Button>

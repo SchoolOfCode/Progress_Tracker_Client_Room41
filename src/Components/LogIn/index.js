@@ -6,7 +6,7 @@ function Login() {
   return (
     <div className='main-inputs'>
       {" "}
-      <p className="sign-up">already a user?</p>
+      {/* <p className="sign-up">already a user?</p> */}
 
       <div id="login-input">
         <Box

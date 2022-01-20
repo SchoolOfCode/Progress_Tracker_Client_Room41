@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import logo from "./soc-logo.png";
+import success from "./Successful completion of project.png"
 import Display from "../Display";
 import Input from "../Input";
 import WelcomePage from "../WelcomePage";
@@ -37,10 +39,11 @@ function App() {
     );
 
   // useEffect that fetched data using the 'name' to send a GET request for the correct table
-
   return (
-    <div className="main-app">
+    <div >
+      <img className="logo" src={logo} alt="School-of-Code-logo"></img>
       <h1 className="welcome-header">Hey there, Camper!</h1>
+      <img className="success" src={success} alt={"successful business person"}></img>
       <WelcomePage
         setWelcome={setWelcome}
         setName={setName}

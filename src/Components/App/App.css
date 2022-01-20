@@ -8,13 +8,16 @@
   text-align: center;
 }
 
-.App-header {
-  min-height: 100vh;
-  display: flex;
+h1.welcome-header {
+  font-family: "Dancing Script", cursive;
+  font-size: 100px;
+  text-align: center;
 }
 
 body {
   background-color: #fafaff;
+  max-width: 880px;
+  margin: 0 auto;
 }
 
 form.MuiBox-root {
@@ -28,24 +31,39 @@ div.welcome-input {
   margin-left: 50px;
 }
 
-.main-inputs {
+/* .main-inputs {
   display: flex;
-  justify-content: center;
-}
+  justify-content: left;
+} */
 
 button {
   margin: auto;
 }
 
-form.MuiBox-root.css-xn6ruc{
-  /* background-color: yellow;
-  width:250px; */
+button.MuiButton-root.MuiButton-text.MuiButton-textPrimary.MuiButton-sizeMedium.MuiButton-textSizeMedium.MuiButtonBase-root.css-1e6y48t-MuiButtonBase-root-MuiButton-root {
+  width: 80px;
 }
 
-.css-xn6ruc>:not(style){
-  /* background-color: violet;
-  width:60vw; */
+img.logo {
+  opacity: 8%;
+  margin-top: 8px;
+  margin-bottom: -272px;
+  margin-left: auto;
+  margin-right: auto;
+  z-index: 0;
+  max-width: 28%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-button.MuiButton-root.MuiButton-text.MuiButton-textPrimary.MuiButton-sizeMedium.MuiButton-textSizeMedium.MuiButtonBase-root.css-1e6y48t-MuiButtonBase-root-MuiButton-root{
-  width:80px;
+
+img.success {
+  opacity: 100%;
+  height: 50%;
+  width: 50%;
+  margin-bottom: -300px;
+  display: flex;
+  margin-left: auto;
+  z-index: 0;
+  filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4))
 }

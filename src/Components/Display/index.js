@@ -24,8 +24,11 @@ function Display({ userTable }) {
   console.log("this is the user table", userTable);
 
   return (
-    <div>
-      <h1>Here is where the data will be displayed using reactChart</h1>
+    <div className="display-div">
+      <p className="test-chart">chart</p>
+      <h2 className="display-h1">
+        Here is where the data will be displayed using reactChart
+      </h2>
     </div>
   );
 }
