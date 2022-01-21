@@ -4,3 +4,7 @@ button.MuiButton-root.MuiButton-text.MuiButton-textPrimary.MuiButton-sizeMedium.
 .sign-up {
   margin: 10px 0;
 }
+
+#sign-line {
+  margin-top: 20px;
+}

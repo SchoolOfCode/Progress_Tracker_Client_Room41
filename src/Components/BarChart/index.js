@@ -10,6 +10,7 @@ import {
   Title,
   Tooltip,
 } from "chart.js";
+import "./BarChart.css";
 ChartJS.register(
   CategoryScale,
   LinearScale,
@@ -27,7 +28,7 @@ export const options = {
     },
     title: {
       display: true,
-      text: "Chart.js Line Chart",
+      text: "Score by week",
     },
   },
 };
@@ -50,7 +51,7 @@ const labels = [
   "Week16",
 ];
 const dummyData = [8, 10, 4, 8, 2, 9, 10];
-const dummyData2 = [6, 3, 10, 4, 10, 6, 15];
+const dummyData2 = [12, 12, 11, 11, 12, 12, 12];
 export const data = {
   labels,
   datasets: [
@@ -72,7 +73,9 @@ export const data = {
 const BarChart = () => {
   return (
     <div>
-      <Bar options={options} data={data} />
+      <div className="bar-chart">
+        <Bar options={options} data={data} />
+      </div>
     </div>
   );
 };

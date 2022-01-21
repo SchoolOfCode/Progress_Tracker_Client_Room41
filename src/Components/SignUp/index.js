@@ -8,10 +8,11 @@ function SignUp({setWelcome, setName, setPassword}) {
 	const [signUpPass, setSignUpPass] = useState('')
 
 	//! Function that sends the object to server
-	function onClick(event) {
+	async function onClick(event) {
 		event.preventDefault()
-		fetchUser()
-		fetchStats()
+		await fetchUser()
+		await fetchStats()
+		setName(signUpUser)
 	}
 	async function fetchUser() {
 		try {
@@ -32,14 +33,9 @@ function SignUp({setWelcome, setName, setPassword}) {
 		const data = await response.json()
 		console.log('data from register button: ', data)
 	}
-	// useEffect(() => {
-	// 	onClick()
-	// }, [])
-
 
 	return (
 		<div className='main-inputs'>
-
 			<div id='welcome-input'>
 				<Box
 					component='form'
@@ -58,8 +54,11 @@ function SignUp({setWelcome, setName, setPassword}) {
 						label='and a password?'
 						variant='standard'
 					/>
-					<Button onClick={onClick}>Sign in</Button>
+					<Button variant='outlined' onClick={onClick}>
+						Register
+					</Button>
 				</Box>
+				<div id='sign-line' className='underline'></div>
 			</div>
 		</div>
 	)
