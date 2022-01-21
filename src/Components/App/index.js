@@ -13,7 +13,9 @@ function App() {
 	const [welcome, setWelcome] = useState(false)
 	const [name, setName] = useState('')
 	const [password, setPassword] = useState('')
+
 	const [userTable, setUsertable] = useState({})
+
 	console.log(name, password)
 
 	useEffect(() => {
@@ -22,14 +24,18 @@ function App() {
 				const response = await fetch(`${url}/register`)
 				const data = await response.json()
 				console.log('user table data: ', data)
+
 				setUsertable(data)
+
 				// console.log('userTable from APP: ', userTable)
 			} catch (error) {
 				console.log(error.message)
 			}
 		}
 		fetchUserTable()
+
 	}, [welcome])
+
 
 	// async function getAllStats() {
 	// 	const response = await fetch(`${url}/progress`)
@@ -48,6 +54,7 @@ function App() {
 	// useEffect that fetched data using the 'name' to send a GET request for the correct table
 	return (
 		<div className='boss-level'>
+
 			<img className='logo' src={logo} alt='School-of-Code-logo'></img>
 			<h1 className='welcome-header'>Hey there, Camper!</h1>
 			<img
