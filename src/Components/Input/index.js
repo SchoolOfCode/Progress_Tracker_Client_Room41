@@ -58,12 +58,12 @@ function Input({ userTable, name }) {
     <div>
       <Box className="input-main-div">
         <div className="welcome-text">
-          <h1>
+          <h2>
             Welcome,{" "}
             {name
               ? name[0].toUpperCase() + name.slice(1).toLowerCase()
               : "User"}
-          </h1>
+          </h2>
           <div className="underline"></div>
         </div>
         <WeekDD setWeek={setWeek} />
