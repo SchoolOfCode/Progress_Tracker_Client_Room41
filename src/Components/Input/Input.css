@@ -7,8 +7,8 @@ button.MuiButton-root.MuiButton-text.MuiButton-textPrimary.MuiButton-sizeMedium.
   padding: 0;
 }
 
-div.welcome-text {
-  margin-top: 16px;
+.welcome-text {
+  margin-top: 10px;
 }
 
 .MuiFormControl-root.css-1agwao2-MuiFormControl-root {

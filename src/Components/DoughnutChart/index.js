@@ -27,7 +27,7 @@ function DoughnutChart() {
           plugins: {
             title: {
               display: true,
-              text: "Score by Day",
+              text: "Total % correct",
             },
             legend: {
               display: true,

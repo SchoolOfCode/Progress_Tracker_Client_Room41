@@ -27,7 +27,7 @@ function Research() {
 
   return (
     <section>
-      <h2>Cheat Sheets</h2>
+      <h2>Reference Materials</h2>
       <div className="underline"></div>
       {referenceArray.map((item, index) => {
         return (
