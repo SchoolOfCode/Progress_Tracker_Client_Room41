@@ -29,7 +29,7 @@ function App() {
 			}
 		}
 		fetchUserTable()
-	}, [])
+	}, [welcome])
 
 	// async function getAllStats() {
 	// 	const response = await fetch(`${url}/progress`)
