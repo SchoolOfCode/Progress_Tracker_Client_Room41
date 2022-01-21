@@ -18,3 +18,7 @@ button.MuiButton-root.MuiButton-text.MuiButton-textPrimary.MuiButton-sizeMedium.
 .input-main-div {
   position: absolute;
 }
+
+.MuiFormControl-root.css-1sbzd9 {
+  margin: 0;
+}
