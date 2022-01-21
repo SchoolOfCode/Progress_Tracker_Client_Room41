@@ -8,10 +8,10 @@ function SignUp({setWelcome, setName, setPassword}) {
 	const [signUpPass, setSignUpPass] = useState('')
 
 	//! Function that sends the object to server
-	function onClick(event) {
+	async function onClick(event) {
 		event.preventDefault()
-		fetchUser()
-		fetchStats()
+		await fetchUser()
+		await fetchStats()
 		setName(signUpUser)
 	}
 	async function fetchUser() {

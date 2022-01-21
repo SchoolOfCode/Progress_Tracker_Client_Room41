@@ -13,10 +13,10 @@ function Input({userTable, name}) {
 	const [score, setScore] = useState()
 
 	//! Function that sends the object to server
-	function onClick(event) {
+	async function onClick(event) {
 		event.preventDefault()
-		updateStats()
-		fetchUpdatedStats()
+		await updateStats()
+		await fetchUpdatedStats()
 	}
 	async function updateStats() {
 		try {
@@ -27,7 +27,7 @@ function Input({userTable, name}) {
 					week: week,
 					day: day,
 					score: score,
-					link_id: userTable.payload[userTable.payload.length - 1].uid + 1,
+					link_id: userTable.payload[userTable.payload.length - 1].uid,
 				}),
 			})
 			const data = await response.json()
@@ -59,7 +59,10 @@ function Input({userTable, name}) {
 			<Box className='input-main-div'>
 				<div className='welcome-text'>
 					<h1>
-						Welcome, {name[0].toUpperCase() + name.slice(1).toLowerCase()}
+						Welcome,{' '}
+						{name
+							? name[0].toUpperCase() + name.slice(1).toLowerCase()
+							: 'User'}
 					</h1>
 					<div className='underline'></div>
 				</div>
