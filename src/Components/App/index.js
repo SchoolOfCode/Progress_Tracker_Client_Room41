@@ -5,7 +5,7 @@ import WelcomePage from '../WelcomePage'
 import './App.css'
 import logo from './soc-logo.png'
 import success from './Successful completion of project.png'
-const url = process.env.REACT_APP_API_URL || 'http://localhost:3005'
+const url = process.env.REACT_APP_API_URL || 'http://localhost:3006'
 
 //! check deployment branch is upstream
 
@@ -33,9 +33,7 @@ function App() {
 			}
 		}
 		fetchUserTable()
-
 	}, [welcome])
-
 
 	// async function getAllStats() {
 	// 	const response = await fetch(`${url}/progress`)
@@ -54,7 +52,6 @@ function App() {
 	// useEffect that fetched data using the 'name' to send a GET request for the correct table
 	return (
 		<div className='boss-level'>
-
 			<img className='logo' src={logo} alt='School-of-Code-logo'></img>
 			<h1 className='welcome-header'>Hey there, Camper!</h1>
 			<img
