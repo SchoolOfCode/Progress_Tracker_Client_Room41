@@ -13,7 +13,7 @@ function Input({userTable, name}) {
 	const [week, setWeek] = useState()
 	const [day, setDay] = useState()
 	const [score, setScore] = useState()
-	const [progressData, setProgressData] = useState()
+	//const [progressData, setProgressData] = useState()
 
 	//! Function that sends the object to server
 	async function onClick(event) {
