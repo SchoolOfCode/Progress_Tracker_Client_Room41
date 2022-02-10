@@ -1,7 +1,8 @@
 import {Box, Button, TextField} from '@mui/material'
 import React, {useState} from 'react'
+import {url} from '../../config'
 import './SignUp.css'
-const url = process.env.REACT_APP_API_URL || 'http://localhost:3006'
+// const url = process.env.REACT_APP_API_URL || 'http://localhost:3005'
 
 function SignUp({setWelcome, setName, setPassword}) {
 	const [signUpUser, setSignUpUser] = useState('')

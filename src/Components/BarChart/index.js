@@ -8,9 +8,11 @@ import {
 	Title,
 	Tooltip,
 } from 'chart.js'
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 import {Bar} from 'react-chartjs-2'
+import {url} from '../../config'
 import './BarChart.css'
+
 ChartJS.register(
 	CategoryScale,
 	LinearScale,
@@ -125,13 +127,48 @@ const test = [
 	},
 ]
 
-const BarChart = ({progTable}) => {
-	console.log('progtable.payload bar chart: ', progTable.payload)
-	if (progTable) {
-		const sortedData = progTable.payload.sort((a, b) => a.week - b.week)
-		console.log('sortedData: ', sortedData)
-	}
+const BarChart = () => {
+	const [progTable, setProgTable] = useState({})
 
+	useEffect(() => {
+		async function fetchProgressTable() {
+			try {
+				const response = await fetch(`${url}/progress`)
+				const data = await response.json()
+				console.log('progress table data: ', data)
+				setProgTable(data)
+			} catch (error) {
+				console.log(error.message)
+			}
+		}
+		fetchProgressTable()
+	}, [])
+	console.log('progTable data from display component: ', progTable)
+	console.log('progtable.payload bar chart: ', progTable.payload)
+	// if (progTable) {
+	// 	const sortedData = progTable.payload.sort((a, b) => a.week - b.week)
+	// 	console.log('sortedData: ', sortedData)
+	// }
+	if (!progTable) {
+		return <p>loading...</p>
+	}
+	const correctAnswers =
+		progTable ??
+		progTable.payload ??
+		progTable.payload.reduce((acc, cur) => {
+			const {score, week} = cur
+			return {
+				...acc,
+				[week]: (acc[week] ?? 0) + score,
+			}
+		}, {})
+	console.log('correctAnswers:', correctAnswers)
+	const correctScores = Object.values(correctAnswers).map(
+		a => correctAnswers[a]
+	)
+	console.log('correctScores:', correctScores)
+
+	// Object.values(correctAnswers)
 	const data = {
 		labels,
 		datasets: [
@@ -144,7 +181,7 @@ const BarChart = ({progTable}) => {
 			},
 			{
 				label: 'Correct Answers',
-				data: correct,
+				data: correct, //correctScore,
 				borderColor: 'rgba(75, 192, 192, 1)',
 				backgroundColor: 'rgba(75, 192, 192, 0.2)',
 				borderWidth: 2,

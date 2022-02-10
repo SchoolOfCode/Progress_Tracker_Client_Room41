@@ -1,10 +1,12 @@
 import {Box, Button} from '@mui/material'
 import React, {useState} from 'react'
+import {url} from '../../config'
 import DayDD from '../DayDD'
 import ScoreDD from '../ScoreDD'
 import WeekDD from '../WeekDD'
 import './Input.css'
-const url = process.env.REACT_APP_API_URL || 'http://localhost:3006'
+
+// const url = process.env.REACT_APP_API_URL || 'http://localhost:3005'
 
 function Input({userTable, name}) {
 	//! make the fields required

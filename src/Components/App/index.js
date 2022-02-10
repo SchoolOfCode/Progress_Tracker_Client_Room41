@@ -1,11 +1,13 @@
 import {useEffect, useState} from 'react'
+import {url} from '../../config'
 import Display from '../Display'
 import Input from '../Input'
 import WelcomePage from '../WelcomePage'
 import './App.css'
 import logo from './soc-logo.png'
 import success from './Successful completion of project.png'
-const url = process.env.REACT_APP_API_URL || 'http://localhost:3006'
+
+// const url = process.env.REACT_APP_API_URL || 'http://localhost:3005'
 
 //! check deployment branch is upstream
 
